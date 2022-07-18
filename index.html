@@ -1,0 +1,515 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Job Application Form</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <style>
+        .captcha {
+            position: relative;
+        }
+
+        .captcha-fake-field {
+            background: transparent;
+            bottom: 0;
+            border: none;
+            display: block;
+            height: 1px;
+            left: 12px;
+            width: 1px;
+            position: absolute;
+            z-index: -1;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="fxt-template-animation fxt-template-layout12" data-bg-image="images/bg12-l.jpg">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-xl-7 col-lg-8 col-sm-10 col-12 fxt-bg-color">
+                    <div class="fxt-content">
+                        <div class="fxt-header">
+                            <a href="login-12.html" class="fxt-logo"><img src="images/Logo-full.png" alt="Logo"></a>
+                            <h4 class="form-header" style="margin-top: 20px;">Job Application Form</h4>
+                            <!-- <p class="form-p">
+                                It’s time to enhance your expert skills with the latest trends & technology.
+                              Our trained and highly recognised trainers are here to help and assist you to
+                              make you ready in the world of beauty & make up.
+                            </p> -->
+                        </div>
+                        <div class="fxt-form">
+
+                            <!-- <h5 class="form-group fxt-transformY-50 fxt-transition-delay-1" style="color: #999898;">Personal Information</h5>  -->
+
+                            <form method="POST" action="js/sendenquiry.php" onSubmit="javascript:return validate();">
+
+                                <div class="row justify-content-center text-center">
+                                    <div class="form-group col-md-4">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+
+                                            <input placeholder="Date" class="form-control" name="date" type="date"
+                                            id="currentDate" required="required">
+
+                                        <script>
+                                            var today = new Date();
+                                            var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+                                            document.getElementById("currentDate").value = date;
+                                            currentDate.value = today.toISOString().substr(0, 10);
+
+
+                                        </script>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <select name="post" id="post" class="form-control ph-color"
+                                                required="required">
+                                                <option value="" class="form-control-option">Applied For Post</option>
+                                                <option value="Franchise Owner" class="form-control-option">Franchise
+                                                    Owner
+                                                </option>
+                                                <option value="Beautician" class="form-control-option">Beautician
+                                                </option>
+                                                <option value="Hairstylist" class="form-control-option">Hairstylist
+                                                </option>
+                                                <option value="Male Therapist" class="form-control-option">Male
+                                                    therapist
+                                                </option>
+                                                <option value="Helper" class="form-control-option">Helper</option>
+                                                <option value="Front Desk" class="form-control-option">Front
+                                                    Desk/Manager
+                                                </option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <input type="text" id="reference" class="form-control" name="reference"
+                                                placeholder="Referred By" required="required">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                        <input type="text" id="name" class="form-control" name="name" placeholder="Name"
+                                            required="required" onkeypress='return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))'>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                        <input type="text" id="address" class="form-control" name="address"
+                                            placeholder="Address" required="required">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <input type="text" id="phone" class="form-control" name="phone1"
+                                                placeholder="Mobile Number" required="required" pattern="[0-9]{10}"
+                                                title="Enter your 10 digit mobile number">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <input type="text" id="phone" class="form-control" name="phone2"
+                                                placeholder="Alternative Number" required="required" pattern="[0-9]{10}"
+                                                title="Enter your 10 digit mobile number">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                        <input type="email" id="email" class="form-control" name="email"
+                                            placeholder="Enter Your Email" required="required">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <p class="ph-color m-0"
+                                                style="text-align: left; float: left; margin-right: 15px;">Marital
+                                                Status -</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-8">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <input type="radio" id="status" name="status" value="Married" class="radio"
+                                                required="required">&nbsp;&nbsp;&nbsp;
+                                            <label for="married"
+                                                class="form-control-lable ph-color">Married</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" id="status" name="status" value="Unmarried"
+                                                class="margin-left-side" required="required">&nbsp;&nbsp;&nbsp;
+                                            <label for="unmarried" class="form-control-lable ph-color">Unmarried</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <input type="text" id="birth" class="form-control" name="birth"
+                                                placeholder="Birth Date" required="required">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <select name="blood" id="blood" class="form-control ph-color"
+                                                required="required">
+                                                <option value="" class="form-control-option">Blood Group</option>
+                                                <option value="A+" class="form-control-option">A+
+                                                </option>
+                                                <option value="A-" class="form-control-option">A-</option>
+                                                <option value="B+" class="form-control-option">B+</option>
+                                                <option value="B-" class="form-control-option">B-</option>
+                                                <option value="O+" class="form-control-option">O+</option>
+                                                <option value="O-" class="form-control-option">O-</option>
+                                                <option value="AB+" class="form-control-option">AB+</option>
+                                                <option value="AB-" class="form-control-option">AB-</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <input type="text" id="education" class="form-control" name="education"
+                                                placeholder="Education Qualification" required="required">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <input type="text" id="percentage" class="form-control" name="percentage"
+                                                placeholder="Percentage" required="required">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                        <input type="text" id="profession" class="form-control" name="profession"
+                                            placeholder="Professional Qualification">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <p class="ph-color m-0" style="text-align: left; float: left;">Certificates
+                                                -</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-8">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <input type="radio" id="certificates" name="certificates" value="Yes"
+                                                class="radio" required="required">&nbsp;&nbsp;&nbsp;
+                                            <label for="yes"
+                                                class="form-control-lable">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" id="certificates" name="certificates" value="No"
+                                                class="margin-left-side" required="required">&nbsp;&nbsp;&nbsp;
+                                            <label for="no" class="form-control-lable">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                        <textarea name="experience" class="form-control"
+                                            placeholder="Work Experience"></textarea>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group mt-3">
+                                    <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                        <input type="text" id="lastjob" class="form-control" name="lastjob"
+                                            placeholder="Reason Of Leaving Last Job">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <p class="ph-color m-0" style="text-align: left; float: left;">
+                                                Awards/Appreciation -</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-8">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <input type="radio" id="award" name="award" value="Yes" class="radio"
+                                                required="required">&nbsp;&nbsp;&nbsp;
+                                            <label for="yes"
+                                                class="form-control-lable">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="radio" id="award" name="award" value="No"
+                                                class="margin-left-side" required="required">&nbsp;&nbsp;&nbsp;
+                                            <label for="no" class="form-control-lable">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1" style="color: #a1a1a1;">
+                                            <p class="ph-color m-0" style="text-align: left; float: left;">Language
+                                                Known -
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-8">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1" style="color: #a1a1a1;">
+                                            <input type="hidden" id="language" name="english" value="No"
+                                                ng-model="isFull" checked>
+                                            <input type="checkbox" id="language" name="english" value="Yes"
+                                                class="radio" ng-model="isFull">&nbsp;
+                                            <label for="english" class="form-control-lable">English</label>&nbsp;&nbsp;
+
+                                            <input type="hidden" id="language" name="hindi" value="No" ng-model="isFull"
+                                                checked>
+                                            <input type="checkbox" id="language" name="hindi" value="Yes"
+                                                class="margin-left-side" ng-model="isFull">&nbsp;
+                                            <label for="hindi" class="form-control-lable">Hindi</label> &nbsp;&nbsp;
+
+                                            <input type="hidden" id="language" name="marathi" value="No"
+                                                ng-model="isFull" checked>
+                                            <input type="checkbox" id="language" name="marathi" value="Yes"
+                                                class="margin-left-side" ng-model="isFull">&nbsp;
+                                            <label for="marathi" class="form-control-lable">Marathi</label> &nbsp;&nbsp;
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <input type="text" id="sal-expt" class="form-control" name="sal_expt"
+                                                placeholder="Salary Expectation">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <input type="text" id="transport" class="form-control" name="transport"
+                                                placeholder="Mode Of Transport">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1" style="color: #a1a1a1;">
+                                            <p class="ph-color m-0" style="text-align: left; float: left;">Computer
+                                                Knowledge -</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-8">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1" style="color: #a1a1a1;">
+                                            <input type="hidden" id="computer" name="comp_exel" value="No"
+                                                ng-model="isFull" checked>
+                                            <input type="checkbox" id="computer" name="comp_exel" value="Yes"
+                                                class="radio" ng-model="isFull">&nbsp;
+                                            <label for="excel" class="form-control-lable">Excel</label>&nbsp;&nbsp;
+
+                                            <input type="hidden" id="computer" name="comp_word" value="No"
+                                                ng-model="isFull" checked>
+                                            <input type="checkbox" id="computer" name="comp_word" value="Yes"
+                                                class="margin-left-side" ng-model="isFull">&nbsp;
+                                            <label for="word" class="form-control-lable">Word</label> &nbsp;&nbsp;
+
+                                            <input type="hidden" id="computer" name="comp_ppt" value="No"
+                                                ng-model="isFull" checked>
+                                            <input type="checkbox" id="computer" name="comp_ppt" value="Yes"
+                                                class="margin-left-side" ng-model="isFull">&nbsp;
+                                            <label for="ppt" class="form-control-lable">PPT</label> &nbsp;&nbsp;
+
+                                            <input type="hidden" id="computer" name="comp_email" value="No"
+                                                ng-model="isFull" checked>
+                                            <input type="checkbox" id="computer" name="comp_email" value="Yes"
+                                                class="margin-left-side" ng-model="isFull">&nbsp;
+                                            <label for="email" class="form-control-lable">Email</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="form-group col-md-12">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <p class="ph-color m-0" style="text-align: left; float: left;">References
+                                                for Verification 1 -</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <input type="text" id="refer-name-1" class="form-control"
+                                                name="refer-name-1" placeholder="Name" required="required">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <input type="text" id="refer-contact-1" class="form-control"
+                                                name="refer-contact-1" placeholder="Contact" required="required">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <select name="refer-relation-1" id="refer-relation-1"
+                                                class="form-control ph-color" required="required">
+                                                <option value="" class="form-control-option">Relation</option>
+                                                <option value="Brother" class="form-control-option">Brother
+                                                </option>
+                                                <option value="Sister" class="form-control-option">Sister</option>
+                                                <option value="Friend" class="form-control-option">Friends</option>
+                                                <option value="Parents" class="form-control-option">Parents</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="form-group col-md-12">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <p class="ph-color m-0" style="text-align: left; float: left;">References
+                                                for Verification 2 -</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <input type="text" id="refer-name-2" class="form-control"
+                                                name="refer-name-2" placeholder="Name" required="required">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <input type="text" id="refer-contact-2" class="form-control"
+                                                name="refer-contact-2" placeholder="Contact" required="required">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                            <select name="refer-relation-2" id="refer-relation-2"
+                                                class="form-control ph-color" required="required">
+                                                <option value="" class="form-control-option">Relation</option>
+                                                <option value="Brother" class="form-control-option">Brother
+                                                </option>
+                                                <option value="Sister" class="form-control-option">Sister</option>
+                                                <option value="Friend" class="form-control-option">Friends</option>
+                                                <option value="Parents" class="form-control-option">Parents</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="fxt-transformY-50 fxt-transition-delay-1">
+                                        <p class="ph-color" style="text-align: left; float: left; margin-right: 15px;">
+                                            Would you like to refer any friends of yours, Looking for job Opportunity
+                                        </p>
+                                        <textarea name="refer_friend" class="form-control" placeholder=""></textarea>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="form-group captcha">
+                                    <div class="g-recaptcha" data-callback="removeFakeCaptcha"
+                                        data-sitekey="6LcwWIQaAAAAAPH-IEPWxqKO02vngzbZsrkkuTMn"></div>
+                                    <input type="checkbox" class="captcha-fake-field" tabindex="-1" required>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <div class="fxt-transformY-50 fxt-transition-delay-4">
+                                        <button type="submit" class="fxt-btn-fill">Submit</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="col-xl-7 col-lg-8 col-sm-10 col-12 copyright">
+                    <div class="left-section">
+                        <p style="text-align: left; float: left; color: #fff; margin-left: 20px;">Website: <a
+                                href="https://salonapple.in/" target="_blank"
+                                style="color: #af2226;">www.salonapple.in</a>
+
+                        </p>
+
+                    </div>
+                    <div class="social-icon">
+                        <p style="text-align: right; color: #fff; margin-right: 20px;">
+                            <a href="https://www.facebook.com/SalonAppleAndSpa/"  title="Facebook" target="_blank" style="color: #af2226; margin-right: 10px;"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/salonappleandspa/" title="Instagram" target="_blank" style="color: #af2226;"><i class="fab fa-instagram"></i></a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script src="js/jquery-3.5.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/validator.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+        window.removeFakeCaptcha = function () {
+            document.querySelector('.captcha-fake-field').remove();
+        }
+    </script>
+
+</body>
+
+</html>
